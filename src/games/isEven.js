@@ -8,7 +8,6 @@ const isEvenGame = () => {
     const randomNumber = generateRandomNumber(15);
 
     const question = `${randomNumber}`;
-
     const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
 
     return [question, correctAnswer];
