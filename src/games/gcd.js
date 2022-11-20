@@ -13,12 +13,8 @@ const gcdGame = () => {
     const terminal = Math.max(randomNum1, randomNum2);
 
     for (let i = 1; i <= terminal; i += 1) {
-      if (randomNum1 % i === 0) {
-        divisors1.push(i);
-      }
-      if (randomNum2 % i === 0) {
-        divisors2.push(i);
-      }
+      if (randomNum1 % i === 0) { divisors1.push(i); }
+      if (randomNum2 % i === 0) { divisors2.push(i); }
     }
 
     let result = 0;
