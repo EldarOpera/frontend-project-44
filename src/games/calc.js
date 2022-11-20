@@ -13,22 +13,22 @@ const calcGame = () => {
 
     const question = `${randomNum1} ${randomOperator} ${randomNum2}`;
 
-    let result;
+    let correctAnswer;
     switch (randomOperator) {
       case '+':
-        result = `${randomNum1 + randomNum2}`;
+        correctAnswer = `${randomNum1 + randomNum2}`;
         break;
       case '-':
-        result = `${randomNum1 - randomNum2}`;
+        correctAnswer = `${randomNum1 - randomNum2}`;
         break;
       case '*':
-        result = `${randomNum1 * randomNum2}`;
+        correctAnswer = `${randomNum1 * randomNum2}`;
         break;
       default:
-        result = null;
+        correctAnswer = null;
     }
 
-    return [question, result];
+    return [question, correctAnswer];
   };
 
   gameEngine(calcGameRules, calcGameResult);
