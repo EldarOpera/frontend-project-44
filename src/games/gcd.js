@@ -2,13 +2,10 @@ import gameEngine from '../index.js';
 import generateRandomNumber from '../genRandomNum.js';
 
 const gcdGame = () => {
-  const gcdGameRules = 'Find the greatest common divisor of given numbers.';
-
-  const gcdGameResult = () => {
+  const rules = 'Find the greatest common divisor of given numbers.';
+  const gameResult = () => {
     const randomNum1 = generateRandomNumber(100);
     const randomNum2 = generateRandomNumber(100);
-
-    const question = `${randomNum1} ${randomNum2}`;
 
     const gcdFinding = (num1, num2) => {
       const divisors1 = [];
@@ -32,13 +29,13 @@ const gcdGame = () => {
 
       return result;
     };
-
+    const question = `${randomNum1} ${randomNum2}`;
     const correctAnswer = `${gcdFinding(randomNum1, randomNum2)}`;
 
     return [question, correctAnswer];
   };
 
-  gameEngine(gcdGameRules, gcdGameResult);
+  gameEngine(rules, gameResult);
 };
 
 export default gcdGame;
