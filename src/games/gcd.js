@@ -33,7 +33,7 @@ const gcdGame = () => {
       return result;
     };
 
-    const correctAnswer = gcdFinding(randomNum1, randomNum2);
+    const correctAnswer = `${gcdFinding(randomNum1, randomNum2)}`;
 
     return [question, correctAnswer];
   };
