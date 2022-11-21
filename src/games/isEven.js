@@ -1,10 +1,10 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../genRandomNum.js';
 
-const isEvenGame = () => {
+const playIsEven = () => {
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const gameResult = () => {
+  const startIsEvenRound = () => {
     const randomNumber = generateRandomNumber(15);
 
     const question = `${randomNumber}`;
@@ -13,7 +13,7 @@ const isEvenGame = () => {
     return [question, correctAnswer];
   };
 
-  gameEngine(rules, gameResult);
+  gameEngine(rules, startIsEvenRound);
 };
 
-export default isEvenGame;
+export default playIsEven;

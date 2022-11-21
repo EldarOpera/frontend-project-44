@@ -1,10 +1,10 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../genRandomNum.js';
 
-const calcGame = () => {
+const playCalc = () => {
   const rules = 'What is the result of the expression?';
 
-  const gameResult = () => {
+  const startCalcRound = () => {
     const randomNum1 = generateRandomNumber(35);
     const randomNum2 = generateRandomNumber(35);
 
@@ -31,7 +31,7 @@ const calcGame = () => {
     return [question, correctAnswer];
   };
 
-  gameEngine(rules, gameResult);
+  gameEngine(rules, startCalcRound);
 };
 
-export default calcGame;
+export default playCalc;

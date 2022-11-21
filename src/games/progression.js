@@ -1,10 +1,10 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../genRandomNum.js';
 
-const progressionGame = () => {
+const playProgression = () => {
   const rules = 'What number is missing in the progression?';
 
-  const gameResult = () => {
+  const startProgressionRound = () => {
     const randomNum1 = generateRandomNumber(15);
     const randomNum2 = generateRandomNumber(5);
     const randomNum3 = generateRandomNumber(9);
@@ -32,7 +32,7 @@ const progressionGame = () => {
     return [question, correctAnswer];
   };
 
-  gameEngine(rules, gameResult);
+  gameEngine(rules, startProgressionRound);
 };
 
-export default progressionGame;
+export default playProgression;

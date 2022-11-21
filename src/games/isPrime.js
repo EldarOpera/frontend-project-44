@@ -1,13 +1,13 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../genRandomNum.js';
 
-const isPrimeGame = () => {
+const playIsPrime = () => {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const gameResult = () => {
+  const startIsPrimeRound = () => {
     const randomNumber = generateRandomNumber(101);
 
-    const isPrime = (num) => {
+    const checkPrimary = (num = randomNumber) => {
       if (num < 2) {
         return false;
       }
@@ -21,14 +21,14 @@ const isPrimeGame = () => {
       return true;
     };
 
-    const result = isPrime(randomNumber);
+    const result = checkPrimary();
     const question = `${randomNumber}`;
     const correctAnswer = result === true ? 'yes' : 'no';
 
     return [question, correctAnswer];
   };
 
-  gameEngine(rules, gameResult);
+  gameEngine(rules, startIsPrimeRound);
 };
 
-export default isPrimeGame;
+export default playIsPrime;
