@@ -4,7 +4,7 @@ import generateRandomNumber from '../genRandomNum.js';
 const playCalc = () => {
   const rules = 'What is the result of the expression?';
 
-  const startCalcRound = () => {
+  const startRound = () => {
     const randomNum1 = generateRandomNumber(35);
     const randomNum2 = generateRandomNumber(35);
 
@@ -31,7 +31,7 @@ const playCalc = () => {
     return [question, correctAnswer];
   };
 
-  gameEngine(rules, startCalcRound);
+  gameEngine(rules, startRound);
 };
 
 export default playCalc;

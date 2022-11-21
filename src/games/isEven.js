@@ -4,7 +4,7 @@ import generateRandomNumber from '../genRandomNum.js';
 const playIsEven = () => {
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const startIsEvenRound = () => {
+  const startRound = () => {
     const randomNumber = generateRandomNumber(15);
 
     const question = `${randomNumber}`;
@@ -13,7 +13,7 @@ const playIsEven = () => {
     return [question, correctAnswer];
   };
 
-  gameEngine(rules, startIsEvenRound);
+  gameEngine(rules, startRound);
 };
 
 export default playIsEven;
