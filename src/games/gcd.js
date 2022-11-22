@@ -10,14 +10,14 @@ const playGcd = () => {
     const divisors = [[], []];
     let result = 0;
 
-    for (let i = 1; i <= terminal; i += 1) {
-      if (randomNumbers[0] % i === 0) {
+    for (let divisor = 1; divisor <= terminal; i += 1) {
+      if (randomNumbers[0] % divisor === 0) {
         divisors[0].push(i);
       }
-      if (randomNumbers[1] % i === 0) {
+      if (randomNumbers[1] % divisor === 0) {
         divisors[1].push(i);
       }
-      if (divisors[0].includes(i) && divisors[1].includes(i)) {
+      if (divisors[0].includes(divisor) && divisors[1].includes(divisor)) {
         if (result < i) { result = i; }
       }
     }
