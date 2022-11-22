@@ -5,26 +5,24 @@ const playGcd = () => {
   const rules = 'Find the greatest common divisor of given numbers.';
 
   const startRound = () => {
-    const randomNum1 = generateRandomNumber(100);
-    const randomNum2 = generateRandomNumber(100);
-    const divisors1 = [];
-    const divisors2 = [];
+    const randomNumbers = [generateRandomNumber(100), generateRandomNumber(100)];
+    const terminal = Math.max(randomNumbers[0], randomNumbers[1]);
+    const divisors = [[], []];
     let result = 0;
-    const terminal = Math.max(randomNum1, randomNum2);
 
     for (let i = 1; i <= terminal; i += 1) {
-      if (randomNum1 % i === 0) {
-        divisors1.push(i);
+      if (randomNumbers[0] % i === 0) {
+        divisors[0].push(i);
       }
-      if (randomNum2 % i === 0) {
-        divisors2.push(i);
+      if (randomNumbers[1] % i === 0) {
+        divisors[1].push(i);
       }
-      if (divisors1.includes(i) && divisors2.includes(i)) {
-        result = result < i ? i : null;
+      if (divisors[0].includes(i) && divisors[1].includes(i)) {
+        if (result < i) { result = i; }
       }
     }
 
-    const question = `${randomNum1} ${randomNum2}`;
+    const question = `${randomNumbers[0]} ${randomNumbers[1]}`;
     const correctAnswer = `${result}`;
 
     return [question, correctAnswer];
