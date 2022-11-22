@@ -21,9 +21,8 @@ const playProgression = () => {
       }
     }
 
-    const result = [progression.join(' '), `${hiddenNum}`];
-    const question = result[0]; // прогрессия с одним скрытым числом
-    const correctAnswer = result[1]; // скрытое число
+    const question = progression.join(' '); // прогрессия с одним скрытым числом
+    const correctAnswer = `${hiddenNum}`; // скрытое число
 
     return [question, correctAnswer];
   };
