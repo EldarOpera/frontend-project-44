@@ -5,23 +5,23 @@ const playIsPrime = () => {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   const startRound = () => {
-    const randomNumber = generateRandomNumber(101);
-    let result;
+    const checkNum = generateRandomNumber(101);
+    let isPrime;
 
-    for (let divisor = 2; divisor <= randomNumber / 2; divisor += 1) {
-      if (randomNumber < 2) {
-        result = false;
+    for (let divisor = 2; divisor <= checkNum / 2; divisor += 1) {
+      if (checkNum < 2) {
+        isPrime = false;
         break;
       }
-      if (randomNumber % divisor === 0) {
-        result = false;
+      if (checkNum % divisor === 0) {
+        isPrime = false;
         break;
       }
-      result = true;
+      isPrime = true;
     }
 
-    const question = `${randomNumber}`;
-    const correctAnswer = result === true ? 'yes' : 'no';
+    const question = `${checkNum}`;
+    const correctAnswer = isPrime === true ? 'yes' : 'no';
 
     return [question, correctAnswer];
   };
