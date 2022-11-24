@@ -23,7 +23,7 @@ const playGcd = () => {
         }
       }
       return String(result);
-    }
+    };
 
     const question = `${randomNumbers[0]} ${randomNumbers[1]}`;
     const correctAnswer = findGcd();

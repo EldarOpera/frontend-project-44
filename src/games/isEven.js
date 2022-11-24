@@ -7,8 +7,10 @@ const playIsEven = () => {
   const startRound = () => {
     const randomNumber = generateRandomNumber(1, 21);
 
-    const question = `${randomNumber}`;
-    const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+    const isEven = (num) => num % 2 === 0 ? 'yes' : 'no';
+
+    const question = String(randomNumber);
+    const correctAnswer = isEven(randomNumber);
 
     return [question, correctAnswer];
   };
