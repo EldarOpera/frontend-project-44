@@ -1,37 +1,34 @@
 import readlineSync from 'readline-sync';
 
-const gameEngine = (gameRules, gameResult) => {
+const startGame = (gameNote, recieveResult) => {
   // Приветствие и знакомство с игроком
   console.log('Welcome to the Brain Games!');
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!`);
 
   // Вывод на экран правил игры или задания
-  console.log(gameRules);
-  let isCorrect = true;
+  console.log(gameNote);
 
   // Работа с телом игры
-  for (let i = 0; i < 3; i += 1) {
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
     // Запись результата запуска игры (['вопрос', 'правильный ответ'])
-    const recievedResult = gameResult();
+    const [question, correctAnswer] = recieveResult();
 
-    const makeQuestion = recievedResult[0];
-    const correctAnswer = recievedResult[1];
-
-    console.log(`Question: ${makeQuestion}`);
+    console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
     if (answer !== correctAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-      isCorrect = false;
-      break;
+      console.log(`Let's try again, ${playerName}!`);
+      return;
     } else {
       console.log('Correct!');
     }
   }
 
-  const result = isCorrect === true ? console.log(`Congratulations, ${playerName}!`) : console.log(`Let's try again, ${playerName}!`);
-  return result;
+  console.log(`Congratulations, ${playerName}!`);
+  return;
 };
 
-export default gameEngine;
+export default startGame;
