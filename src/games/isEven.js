@@ -1,31 +1,24 @@
 import startGame from '../index.js';
 import generateRandomNumber from '../genRandomNum.js';
 
-const playIsPrime = () => {
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-  const isPrime = (num) => {
-    let result = 'yes';
-
-    for (let divisor = 2; divisor <= num / 2; divisor += 1) {
-      if (num < 2) {
-        result = 'no';
-        return result;
-      }
-      if (num % divisor === 0) {
-        result = 'no';
-        return result;
-      }
-      result = 'yes';
-    }
-    return result;
-  };
+const playIsEven = () => {
+  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const startRound = () => {
-    const randomNumber = generateRandomNumber(1, 101);
+    const randomNumber = generateRandomNumber(1, 21);
+
+    const isEven = (num) => {
+      let result;
+      if (num % 2 === 0) {
+        result = 'yes';
+      } else {
+        result = 'no';
+      }
+      return result;
+    };
 
     const question = String(randomNumber);
-    const correctAnswer = isPrime(randomNumber);
+    const correctAnswer = isEven(randomNumber);
 
     return [question, correctAnswer];
   };
@@ -33,4 +26,4 @@ const playIsPrime = () => {
   startGame(rules, startRound);
 };
 
-export default playIsPrime;
+export default playIsEven;
