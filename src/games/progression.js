@@ -13,8 +13,8 @@ const playProgression = () => {
       const progression = [];
       let hiddenNum;
 
-      for (let i = 0, j = initialNum; i < 10; i += 1, j += numsToSkip) {
-        if (i === numToHide) {
+      for (let i = 0, j = start; i < 10; i += 1, j += toSkip) {
+        if (i === toHide) {
           progression.push('..');
           hiddenNum = j;
         } else {

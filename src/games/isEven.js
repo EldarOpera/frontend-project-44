@@ -1,4 +1,4 @@
-import gameEngine from '../index.js';
+import startGame from '../index.js';
 import generateRandomNumber from '../genRandomNum.js';
 
 const playIsEven = () => {
@@ -7,7 +7,15 @@ const playIsEven = () => {
   const startRound = () => {
     const randomNumber = generateRandomNumber(1, 21);
 
-    const isEven = (num) => num % 2 === 0 ? 'yes' : 'no';
+    const isEven = (num) => {
+      let result;
+      if (num % 2 === 0) {
+        result = 'yes';
+      } else {
+        result = 'no';
+      }
+      return result;
+    };
 
     const question = String(randomNumber);
     const correctAnswer = isEven(randomNumber);
@@ -15,7 +23,7 @@ const playIsEven = () => {
     return [question, correctAnswer];
   };
 
-  gameEngine(rules, startRound);
+  startGame(rules, startRound);
 };
 
 export default playIsEven;

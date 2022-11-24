@@ -18,17 +18,16 @@ const startGame = (gameNote, recieveResult) => {
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (answer !== correctAnswer) {
+    if (answer === correctAnswer) {
+      console.log('Correct!');
+    } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${playerName}!`);
       return;
-    } else {
-      console.log('Correct!');
     }
   }
 
   console.log(`Congratulations, ${playerName}!`);
-  return;
 };
 
 export default startGame;
