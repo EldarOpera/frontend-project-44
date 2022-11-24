@@ -5,11 +5,11 @@ const playCalc = () => {
   const rules = 'What is the result of the expression?';
 
   const startRound = () => {
-    const randomNum1 = generateRandomNumber(35);
-    const randomNum2 = generateRandomNumber(35);
+    const randomNum1 = generateRandomNumber(1, 36);
+    const randomNum2 = generateRandomNumber(1, 36);
 
     const operators = ['+', '-', '*'];
-    const randomOperator = operators[generateRandomNumber(2)];
+    const randomOperator = operators[generateRandomNumber(0, operators.length - 1)];
 
     const question = `${randomNum1} ${randomOperator} ${randomNum2}`;
 

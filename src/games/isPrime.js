@@ -5,7 +5,7 @@ const playIsPrime = () => {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   const startRound = () => {
-    const number = generateRandomNumber(101);
+    const number = generateRandomNumber(1, 101);
     const question = `${number}`;
     let correctAnswer = 'yes';
 

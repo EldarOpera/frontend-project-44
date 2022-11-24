@@ -5,7 +5,7 @@ const playGcd = () => {
   const rules = 'Find the greatest common divisor of given numbers.';
 
   const startRound = () => {
-    const randomNumbers = [generateRandomNumber(100), generateRandomNumber(100)];
+    const randomNumbers = [generateRandomNumber(1, 101), generateRandomNumber(1, 101)];
     const terminal = Math.max(randomNumbers[0], randomNumbers[1]);
     const divisors = [[], []];
 

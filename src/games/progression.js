@@ -5,9 +5,9 @@ const playProgression = () => {
   const rules = 'What number is missing in the progression?';
 
   const startProgressionRound = () => {
-    const initialNum = generateRandomNumber(15);
-    const numsToSkip = generateRandomNumber(5);
-    const numToHide = generateRandomNumber(9);
+    const initialNum = generateRandomNumber(1, 16);
+    const numsToSkip = generateRandomNumber(1, 6);
+    const numToHide = generateRandomNumber(1, 10);
 
     const progression = [];
     let hiddenNum;
