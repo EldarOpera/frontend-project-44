@@ -13,8 +13,11 @@ const isEven = (num) => {
 const playIsEven = () => {
   const startRound = () => {
     const randomNum = generateRandomNumber(1, 21);
+
+    const isEvenResult = isEven(randomNum) ? 'yes' : 'no';
+
     const question = String(randomNum);
-    const correctAnswer = isEven(randomNum) === false ? 'no' : 'yes';
+    const correctAnswer = isEvenResult;
 
     return [question, correctAnswer];
   };
