@@ -1,32 +1,29 @@
 import startGame from '../index.js';
 import generateRandomNumber from '../genRandomNum.js';
 
+const rules = 'Find the greatest common divisor of given numbers.';
+
+const findGcd = (n1, n2) => {
+  let num1 = n1;
+  let num2 = n2;
+  while (num1 !== num2) {
+    if (num1 > num2) {
+      num1 -= num2;
+    } else {
+      num2 -= num1;
+    }
+  }
+
+  return num1;
+};
+
 const playGcd = () => {
-  const rules = 'Find the greatest common divisor of given numbers.';
-
   const startRound = () => {
-    const randomNumbers = [generateRandomNumber(1, 101), generateRandomNumber(1, 101)];
-    const terminal = Math.max(randomNumbers[0], randomNumbers[1]);
+    const randomNumber1 = generateRandomNumber(1, 101);
+    const randomNumber2 = generateRandomNumber(1, 101);
 
-    const findGcd = (numbers, iterations) => {
-      const divisors = [[], []];
-      let result = 0;
-      for (let divisor = 1; divisor <= iterations; divisor += 1) {
-        if (numbers[0] % divisor === 0) {
-          divisors[0].push(divisor);
-        }
-        if (numbers[1] % divisor === 0) {
-          divisors[1].push(divisor);
-        }
-        if (divisors[0].includes(divisor) && divisors[1].includes(divisor)) {
-          if (result < divisor) { result = divisor; }
-        }
-      }
-      return String(result);
-    };
-
-    const question = `${randomNumbers[0]} ${randomNumbers[1]}`;
-    const correctAnswer = findGcd(randomNumbers, terminal);
+    const question = `${randomNumber1} ${randomNumber2}`;
+    const correctAnswer = String(findGcd(randomNumber1, randomNumber2));
 
     return [question, correctAnswer];
   };

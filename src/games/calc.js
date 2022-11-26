@@ -19,7 +19,6 @@ const calculate = (operator, num1, num2) => {
 };
 
 const playCalc = () => {
-
   const startRound = () => {
     const randomNum1 = generateRandomNumber(1, 36);
     const randomNum2 = generateRandomNumber(1, 36);
