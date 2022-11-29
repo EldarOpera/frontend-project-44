@@ -1,7 +1,7 @@
 import startGame from '../index.js';
 import generateRandomNumber from '../genRandomNum.js';
 
-const rules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
 
@@ -30,7 +30,7 @@ const playCalc = () => {
     return [question, correctAnswer];
   };
 
-  startGame(rules, startRound);
+  startGame(description, startRound);
 };
 
 export default playCalc;

@@ -1,35 +1,42 @@
 import startGame from '../index.js';
 import generateRandomNumber from '../genRandomNum.js';
 
-const rules = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-const createProgression = (start, toSkip, toHide) => {
+const createProgression = (start, toSkip) => {
   const progression = [];
-  let hiddenNum;
   for (let i = 0, j = start; i < 10; i += 1, j += toSkip) {
+    progression.push(j);
+  }
+
+  return progression;
+};
+
+const hideNumber = (progression, toHide) => {
+  const preparedProgression = progression.slice(0);
+  for (let i = 0; i < preparedProgression.length; i += 1) {
     if (i === toHide) {
-      progression.push('..');
-      hiddenNum = j;
-    } else {
-      progression.push(j);
+      preparedProgression[i] = '..';
     }
   }
-  return [progression, hiddenNum];
+
+  return preparedProgression;
 };
 
 const playProgression = () => {
   const startRound = () => {
     const initialNum = generateRandomNumber(1, 16);
-    const numsToSkip = generateRandomNumber(1, 6);
+    const numToSkip = generateRandomNumber(1, 6);
     const numToHide = generateRandomNumber(0, 10);
 
-    const question = createProgression(initialNum, numsToSkip, numToHide)[0].join(' ');
-    const correctAnswer = String(createProgression(initialNum, numsToSkip, numToHide)[1]);
+    const progression = createProgression(initialNum, numToSkip);
+    const question = hideNumber(progression, numToHide).join(' ');
+    const correctAnswer = String(progression[numToHide]);
 
     return [question, correctAnswer];
   };
 
-  startGame(rules, startRound);
+  startGame(description, startRound);
 };
 
 export default playProgression;
